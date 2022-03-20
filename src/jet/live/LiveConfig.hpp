@@ -21,5 +21,7 @@ namespace jet
          * If `true`, also reload code when app receives `SIGUSR1`.
          */
         bool reloadOnSignal = true;
+
+        std::string linkOptions = "";
     };
 }

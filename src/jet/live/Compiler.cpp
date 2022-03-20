@@ -298,6 +298,7 @@ namespace jet
             findPrefferedBaseAddressForLibrary(objectFilePaths),
             m_context->linkerType,
             objectFilePaths);
+        linkCommand.append(m_context->liveConfig.linkOptions);
         m_context->events->addLog(LogSeverity::kDebug, "Link command:\n" + linkCommand);
 
         const auto& buildDir = getCmakeBuildDirectory();

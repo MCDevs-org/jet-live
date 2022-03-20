@@ -2,3 +2,4 @@
 tidy_report
 build
 compile_commands.json
+.venv
