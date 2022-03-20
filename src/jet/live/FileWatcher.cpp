@@ -34,11 +34,12 @@ namespace jet
 {
     FileWatcher::FileWatcher(const std::unordered_set<std::string>& directoriesToWatch,
         std::function<void(const Event&)>&& callback,
-        std::function<bool(const std::string&, const std::string&)>&& filterFunc)
+        std::function<bool(const std::string&, const std::string&)>&& filterFunc,
+        bool useGenericFileWatcher)
         : m_callback(std::move(callback))
         , m_filterFunction(std::move(filterFunc))
     {
-        m_fileWatcher = jet::make_unique<efsw::FileWatcher>();
+        m_fileWatcher = jet::make_unique<efsw::FileWatcher>(useGenericFileWatcher);
         m_fileWatcher->followSymlinks(true);
         m_fileWatcher->allowOutOfScopeLinks(true);
 

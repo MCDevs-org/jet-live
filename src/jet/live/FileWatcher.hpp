@@ -43,7 +43,8 @@ namespace jet
          */
         explicit FileWatcher(const std::unordered_set<std::string>& directoriesToWatch,
             std::function<void(const Event&)>&& callback,
-            std::function<bool(const std::string&, const std::string&)>&& filterFunc);
+            std::function<bool(const std::string&, const std::string&)>&& filterFunc,
+            bool useGenericFileWatcher);
         ~FileWatcher();
 
         void update();

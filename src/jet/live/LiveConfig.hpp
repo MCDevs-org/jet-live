@@ -23,5 +23,7 @@ namespace jet
         bool reloadOnSignal = true;
 
         std::string linkOptions = "";
+
+        bool useGenericFileWatcher = false;
     };
 }

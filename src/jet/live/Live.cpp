@@ -353,7 +353,9 @@ namespace jet
                         !(s > 1 && f[s - 2] == '.' && f[s - 1] == 'd')
                         );
                 // clang-format on
-            });
+            },
+            m_context->liveConfig.useGenericFileWatcher
+            );
         m_context->events->addLog(LogSeverity::kInfo, "Setup file watcher: done");
     }
 
